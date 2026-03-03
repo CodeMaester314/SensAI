@@ -34,45 +34,70 @@
           <div>
             <h3 class="font-semibold mb-2">Physical Attributes</h3>
             <div class="grid grid-cols-2 gap-4">
+
               <div>
-                <label class="block mb-1 text-gray-300" for="userAge">Age</label>
-                <input type="number" id="userAge" name="userAge" placeholder="Age"
-                  class="p-2 rounded bg-gray-700 w-full">
+                <label class="block mb-1 text-gray-300" for="userAge">Age: <span id="userAgeVal">25</span></label>
+                <input type="range" id="userAge" name="userAge" min="18" max="45" value="25"
+                  class="w-full accent-red-600"
+                  oninput="document.getElementById('userAgeVal').textContent = this.value">
               </div>
+
               <div>
-                <label class="block mb-1 text-gray-300" for="userHeight">Height (cm)</label>
-                <input type="number" id="userHeight" name="userHeight" placeholder="Height (cm)"
-                  class="p-2 rounded bg-gray-700 w-full">
+                <label class="block mb-1 text-gray-300" for="userHeight">Height (cm): <span
+                    id="userHeightVal">175</span></label>
+                <input type="range" id="userHeight" name="userHeight" min="150" max="220" value="175"
+                  class="w-full accent-red-600"
+                  oninput="document.getElementById('userHeightVal').textContent = this.value">
               </div>
+
               <div>
-                <label class="block mb-1 text-gray-300" for="userReach">Reach (cm)</label>
-                <input type="number" id="userReach" name="userReach" placeholder="Reach (cm)"
-                  class="p-2 rounded bg-gray-700 w-full">
+                <label class="block mb-1 text-gray-300" for="userReach">Reach (cm): <span
+                    id="userReachVal">180</span></label>
+                <input type="range" id="userReach" name="userReach" min="150" max="220" value="180"
+                  class="w-full accent-red-600"
+                  oninput="document.getElementById('userReachVal').textContent = this.value">
               </div>
+
               <div>
-                <label class="block mb-1 text-gray-300" for="userWeight">Weight (kg)</label>
-                <input type="number" id="userWeight" name="userWeight" placeholder="Weight (kg)"
-                  class="p-2 rounded bg-gray-700 w-full">
+                <label class="block mb-1 text-gray-300" for="userWeight">Weight (kg): <span
+                    id="userWeightVal">70</span></label>
+                <input type="range" id="userWeight" name="userWeight" min="50" max="120" value="70"
+                  class="w-full accent-red-600"
+                  oninput="document.getElementById('userWeightVal').textContent = this.value">
               </div>
+
+              <!-- Cardio, Durability, Power, Speed -->
+
               <div>
-                <label class="block mb-1 text-gray-300" for="userCardio">Cardio (1-10)</label>
-                <input type="number" min="1" max="10" id="userCardio" name="userCardio" placeholder="Cardio (1-10)"
-                  class="p-2 rounded bg-gray-700 w-full">
+                <label class="block mb-1 text-gray-300" for="userCardio">Cardio (1-10): <span
+                    id="userCardioVal">5</span></label>
+                <input type="range" id="userCardio" name="userCardio" min="1" max="10" value="5"
+                  class="w-full accent-red-600"
+                  oninput="document.getElementById('userCardioVal').textContent = this.value">
               </div>
+
               <div>
-                <label class="block mb-1 text-gray-300" for="userDurability">Durability / Chin (1-10)</label>
-                <input type="number" min="1" max="10" id="userDurability" name="userDurability"
-                  placeholder="Durability / Chin (1-10)" class="p-2 rounded bg-gray-700 w-full">
+                <label class="block mb-1 text-gray-300" for="userDurability">Durability / Chin (1-10): <span
+                    id="userDurabilityVal">5</span></label>
+                <input type="range" id="userDurability" name="userDurability" min="1" max="10" value="5"
+                  class="w-full accent-red-600"
+                  oninput="document.getElementById('userDurabilityVal').textContent = this.value">
               </div>
+
               <div>
-                <label class="block mb-1 text-gray-300" for="userPower">Power (1-10)</label>
-                <input type="number" min="1" max="10" id="userPower" name="userPower" placeholder="Power (1-10)"
-                  class="p-2 rounded bg-gray-700 w-full">
+                <label class="block mb-1 text-gray-300" for="userPower">Power (1-10): <span
+                    id="userPowerVal">5</span></label>
+                <input type="range" id="userPower" name="userPower" min="1" max="10" value="5"
+                  class="w-full accent-red-600"
+                  oninput="document.getElementById('userPowerVal').textContent = this.value">
               </div>
+
               <div>
-                <label class="block mb-1 text-gray-300" for="userSpeed">Speed (1-10)</label>
-                <input type="number" min="1" max="10" id="userSpeed" name="userSpeed" placeholder="Speed (1-10)"
-                  class="p-2 rounded bg-gray-700 w-full">
+                <label class="block mb-1 text-gray-300" for="userSpeed">Speed (1-10): <span
+                    id="userSpeedVal">5</span></label>
+                <input type="range" id="userSpeed" name="userSpeed" min="1" max="10" value="5"
+                  class="w-full accent-red-600"
+                  oninput="document.getElementById('userSpeedVal').textContent = this.value">
               </div>
             </div>
           </div>
@@ -209,26 +234,44 @@
         <div class="mt-6">
           <h3 class="font-semibold mb-2">Defensive Attributes</h3>
           <div class="grid md:grid-cols-3 gap-4">
+
             <div>
-              <label class="block mb-1 text-gray-300" for="userFootwork">Footwork (1-10)</label>
-              <input type="number" min="1" max="10" id="userFootwork" name="userFootwork" placeholder="Footwork (1-10)"
-                class="p-2 rounded bg-gray-700 w-full">
+              <label class="block mb-1 text-gray-300" for="userFootwork">
+                Footwork (1-10): <span id="userFootworkVal">5</span>
+              </label>
+              <input type="range" id="userFootwork" name="userFootwork" min="1" max="10" value="5"
+                class="w-full accent-red-600"
+                oninput="document.getElementById('userFootworkVal').textContent = this.value">
             </div>
+
             <div>
-              <label class="block mb-1 text-gray-300" for="userHeadMovement">Head Movement (1-10)</label>
-              <input type="number" min="1" max="10" id="userHeadMovement" name="userHeadMovement"
-                placeholder="Head Movement (1-10)" class="p-2 rounded bg-gray-700 w-full">
+              <label class="block mb-1 text-gray-300" for="userHeadMovement">
+                Head Movement (1-10): <span id="userHeadMovementVal">5</span>
+              </label>
+              <input type="range" id="userHeadMovement" name="userHeadMovement" min="1" max="10" value="5"
+                class="w-full accent-red-600"
+                oninput="document.getElementById('userHeadMovementVal').textContent = this.value">
             </div>
+
             <div>
-              <label class="block mb-1 text-gray-300" for="userDefensiveGuard">Defensive Guard (1-10)</label>
-              <input type="number" min="1" max="10" id="userDefensiveGuard" name="userDefensiveGuard"
-                placeholder="Defensive Guard (1-10)" class="p-2 rounded bg-gray-700 w-full">
+              <label class="block mb-1 text-gray-300" for="userDefensiveGuard">
+                Defensive Guard (1-10): <span id="userDefensiveGuardVal">5</span>
+              </label>
+              <input type="range" id="userDefensiveGuard" name="userDefensiveGuard" min="1" max="10" value="5"
+                class="w-full accent-red-600"
+                oninput="document.getElementById('userDefensiveGuardVal').textContent = this.value">
             </div>
+
             <div>
-              <label class="block mb-1 text-gray-300" for="userCageAwareness">Cage Awareness (1-10)</label>
-              <input type="number" min="1" max="10" id="userCageAwareness" name="userCageAwareness"
-                placeholder="Cage Awareness (1-10)" class="p-2 rounded bg-gray-700 w-full">
+              <label class="block mb-1 text-gray-300" for="userCageAwareness">
+                Cage Awareness (1-10): <span id="userCageAwarenessVal">5</span>
+              </label>
+              <input type="range" id="userCageAwareness" name="userCageAwareness" min="1" max="10" value="5"
+                class="w-full accent-red-600"
+                oninput="document.getElementById('userCageAwarenessVal').textContent = this.value">
             </div>
+
+
           </div>
         </div>
 
@@ -236,36 +279,63 @@
         <div class="mt-6">
           <h3 class="font-semibold mb-2">Fight IQ / Psychological Attributes</h3>
           <div class="grid md:grid-cols-3 gap-4">
+
             <div>
-              <label class="block mb-1 text-gray-300" for="userTacticalIQ">Tactical IQ (1-10)</label>
-              <input type="number" min="1" max="10" id="userTacticalIQ" name="userTacticalIQ"
-                placeholder="Tactical IQ (1-10)" class="p-2 rounded bg-gray-700 w-full">
+              <label class="block mb-1 text-gray-300" for="userTacticalIQ">
+                Tactical IQ (1-10): <span id="userTacticalIQVal">5</span>
+              </label>
+              <input type="range" id="userTacticalIQ" name="userTacticalIQ" min="1" max="10" value="5"
+                class="w-full accent-red-600"
+                oninput="document.getElementById('userTacticalIQVal').textContent = this.value">
             </div>
+
             <div>
-              <label class="block mb-1 text-gray-300" for="userAdaptability">Adaptability (1-10)</label>
-              <input type="number" min="1" max="10" id="userAdaptability" name="userAdaptability"
-                placeholder="Adaptability (1-10)" class="p-2 rounded bg-gray-700 w-full">
+              <label class="block mb-1 text-gray-300" for="userAdaptability">
+                Adaptability (1-10): <span id="userAdaptabilityVal">5</span>
+              </label>
+              <input type="range" id="userAdaptability" name="userAdaptability" min="1" max="10" value="5"
+                class="w-full accent-red-600"
+                oninput="document.getElementById('userAdaptabilityVal').textContent = this.value">
             </div>
+
             <div>
-              <label class="block mb-1 text-gray-300" for="userComposure">Composure (1-10)</label>
-              <input type="number" min="1" max="10" id="userComposure" name="userComposure"
-                placeholder="Composure (1-10)" class="p-2 rounded bg-gray-700 w-full">
+              <label class="block mb-1 text-gray-300" for="userComposure">
+                Composure (1-10): <span id="userComposureVal">5</span>
+              </label>
+              <input type="range" id="userComposure" name="userComposure" min="1" max="10" value="5"
+                class="w-full accent-red-600"
+                oninput="document.getElementById('userComposureVal').textContent = this.value">
             </div>
+
             <div>
-              <label class="block mb-1 text-gray-300" for="userAggression">Aggression (1-10)</label>
-              <input type="number" min="1" max="10" id="userAggression" name="userAggression"
-                placeholder="Aggression (1-10)" class="p-2 rounded bg-gray-700 w-full">
+              <label class="block mb-1 text-gray-300" for="userAggression">
+                Aggression (1-10): <span id="userAggressionVal">5</span>
+              </label>
+              <input type="range" id="userAggression" name="userAggression" min="1" max="10" value="5"
+                class="w-full accent-red-600"
+                oninput="document.getElementById('userAggressionVal').textContent = this.value">
             </div>
+
             <div>
-              <label class="block mb-1 text-gray-300" for="userPatience">Patience (1-10)</label>
-              <input type="number" min="1" max="10" id="userPatience" name="userPatience" placeholder="Patience (1-10)"
-                class="p-2 rounded bg-gray-700 w-full">
+              <label class="block mb-1 text-gray-300" for="userPatience">
+                Patience (1-10): <span id="userPatienceVal">5</span>
+              </label>
+              <input type="range" id="userPatience" name="userPatience" min="1" max="10" value="5"
+                class="w-full accent-red-600"
+                oninput="document.getElementById('userPatienceVal').textContent = this.value">
             </div>
+
             <div>
-              <label class="block mb-1 text-gray-300" for="userRiskTolerance">Risk Tolerance (1-10)</label>
-              <input type="number" min="1" max="10" id="userRiskTolerance" name="userRiskTolerance"
-                placeholder="Risk Tolerance (1-10)" class="p-2 rounded bg-gray-700 w-full">
+              <label class="block mb-1 text-gray-300" for="userRiskTolerance">
+                Risk Tolerance (1-10): <span id="userRiskToleranceVal">5</span>
+              </label>
+              <input type="range" id="userRiskTolerance" name="userRiskTolerance" min="1" max="10" value="5"
+                class="w-full accent-red-600"
+                oninput="document.getElementById('userRiskToleranceVal').textContent = this.value">
             </div>
+
+
+
           </div>
         </div>
 
@@ -282,44 +352,75 @@
             <h3 class="font-semibold mb-2">Physical Attributes</h3>
             <div class="grid grid-cols-2 gap-4">
               <div>
-                <label class="block mb-1 text-gray-300" for="opponentAge">Age</label>
-                <input type="number" id="opponentAge" name="opponentAge" placeholder="Age"
-                  class="p-2 rounded bg-gray-700 w-full">
+                <label class="block mb-1 text-gray-300" for="opponentAge">
+                  Age: <span id="opponentAgeVal">30</span>
+                </label>
+                <input type="range" id="opponentAge" name="opponentAge" min="18" max="50" value="30"
+                  class="w-full accent-red-600"
+                  oninput="document.getElementById('opponentAgeVal').textContent = this.value">
               </div>
+
               <div>
-                <label class="block mb-1 text-gray-300" for="opponentHeight">Height (cm)</label>
-                <input type="number" id="opponentHeight" name="opponentHeight" placeholder="Height (cm)"
-                  class="p-2 rounded bg-gray-700 w-full">
+                <label class="block mb-1 text-gray-300" for="opponentHeight">
+                  Height (cm): <span id="opponentHeightVal">180</span>
+                </label>
+                <input type="range" id="opponentHeight" name="opponentHeight" min="150" max="220" value="180"
+                  class="w-full accent-red-600"
+                  oninput="document.getElementById('opponentHeightVal').textContent = this.value">
               </div>
+
               <div>
-                <label class="block mb-1 text-gray-300" for="opponentReach">Reach (cm)</label>
-                <input type="number" id="opponentReach" name="opponentReach" placeholder="Reach (cm)"
-                  class="p-2 rounded bg-gray-700 w-full">
+                <label class="block mb-1 text-gray-300" for="opponentReach">
+                  Reach (cm): <span id="opponentReachVal">180</span>
+                </label>
+                <input type="range" id="opponentReach" name="opponentReach" min="150" max="220" value="180"
+                  class="w-full accent-red-600"
+                  oninput="document.getElementById('opponentReachVal').textContent = this.value">
               </div>
+
               <div>
-                <label class="block mb-1 text-gray-300" for="opponentWeight">Weight (kg)</label>
-                <input type="number" id="opponentWeight" name="opponentWeight" placeholder="Weight (kg)"
-                  class="p-2 rounded bg-gray-700 w-full">
+                <label class="block mb-1 text-gray-300" for="opponentWeight">
+                  Weight (kg): <span id="opponentWeightVal">75</span>
+                </label>
+                <input type="range" id="opponentWeight" name="opponentWeight" min="50" max="150" value="75"
+                  class="w-full accent-red-600"
+                  oninput="document.getElementById('opponentWeightVal').textContent = this.value">
               </div>
+
               <div>
-                <label class="block mb-1 text-gray-300" for="opponentCardio">Cardio (1-10)</label>
-                <input type="number" min="1" max="10" id="opponentCardio" name="opponentCardio"
-                  placeholder="Cardio (1-10)" class="p-2 rounded bg-gray-700 w-full">
+                <label class="block mb-1 text-gray-300" for="opponentCardio">
+                  Cardio (1-10): <span id="opponentCardioVal">5</span>
+                </label>
+                <input type="range" id="opponentCardio" name="opponentCardio" min="1" max="10" value="5"
+                  class="w-full accent-red-600"
+                  oninput="document.getElementById('opponentCardioVal').textContent = this.value">
               </div>
+
               <div>
-                <label class="block mb-1 text-gray-300" for="opponentDurability">Durability / Chin (1-10)</label>
-                <input type="number" min="1" max="10" id="opponentDurability" name="opponentDurability"
-                  placeholder="Durability / Chin (1-10)" class="p-2 rounded bg-gray-700 w-full">
+                <label class="block mb-1 text-gray-300" for="opponentDurability">
+                  Durability / Chin (1-10): <span id="opponentDurabilityVal">5</span>
+                </label>
+                <input type="range" id="opponentDurability" name="opponentDurability" min="1" max="10" value="5"
+                  class="w-full accent-red-600"
+                  oninput="document.getElementById('opponentDurabilityVal').textContent = this.value">
               </div>
+
               <div>
-                <label class="block mb-1 text-gray-300" for="opponentPower">Power (1-10)</label>
-                <input type="number" min="1" max="10" id="opponentPower" name="opponentPower" placeholder="Power (1-10)"
-                  class="p-2 rounded bg-gray-700 w-full">
+                <label class="block mb-1 text-gray-300" for="opponentPower">
+                  Power (1-10): <span id="opponentPowerVal">5</span>
+                </label>
+                <input type="range" id="opponentPower" name="opponentPower" min="1" max="10" value="5"
+                  class="w-full accent-red-600"
+                  oninput="document.getElementById('opponentPowerVal').textContent = this.value">
               </div>
+
               <div>
-                <label class="block mb-1 text-gray-300" for="opponentSpeed">Speed (1-10)</label>
-                <input type="number" min="1" max="10" id="opponentSpeed" name="opponentSpeed" placeholder="Speed (1-10)"
-                  class="p-2 rounded bg-gray-700 w-full">
+                <label class="block mb-1 text-gray-300" for="opponentSpeed">
+                  Speed (1-10): <span id="opponentSpeedVal">5</span>
+                </label>
+                <input type="range" id="opponentSpeed" name="opponentSpeed" min="1" max="10" value="5"
+                  class="w-full accent-red-600"
+                  oninput="document.getElementById('opponentSpeedVal').textContent = this.value">
               </div>
             </div>
           </div>
@@ -468,24 +569,39 @@
           <h3 class="font-semibold mb-2">Defensive Attributes</h3>
           <div class="grid md:grid-cols-3 gap-4">
             <div>
-              <label class="block mb-1 text-gray-300" for="opponentFootwork">Footwork (1-10)</label>
-              <input type="number" min="1" max="10" id="opponentFootwork" name="opponentFootwork"
-                placeholder="Footwork (1-10)" class="p-2 rounded bg-gray-700 w-full">
+              <label class="block mb-1 text-gray-300" for="opponentFootwork">
+                Footwork (1-10): <span id="opponentFootworkVal">5</span>
+              </label>
+              <input type="range" id="opponentFootwork" name="opponentFootwork" min="1" max="10" value="5"
+                class="w-full accent-red-600"
+                oninput="document.getElementById('opponentFootworkVal').textContent = this.value">
             </div>
+
             <div>
-              <label class="block mb-1 text-gray-300" for="opponentHeadMovement">Head Movement (1-10)</label>
-              <input type="number" min="1" max="10" id="opponentHeadMovement" name="opponentHeadMovement"
-                placeholder="Head Movement (1-10)" class="p-2 rounded bg-gray-700 w-full">
+              <label class="block mb-1 text-gray-300" for="opponentHeadMovement">
+                Head Movement (1-10): <span id="opponentHeadMovementVal">5</span>
+              </label>
+              <input type="range" id="opponentHeadMovement" name="opponentHeadMovement" min="1" max="10" value="5"
+                class="w-full accent-red-600"
+                oninput="document.getElementById('opponentHeadMovementVal').textContent = this.value">
             </div>
+
             <div>
-              <label class="block mb-1 text-gray-300" for="opponentDefensiveGuard">Defensive Guard (1-10)</label>
-              <input type="number" min="1" max="10" id="opponentDefensiveGuard" name="opponentDefensiveGuard"
-                placeholder="Defensive Guard (1-10)" class="p-2 rounded bg-gray-700 w-full">
+              <label class="block mb-1 text-gray-300" for="opponentDefensiveGuard">
+                Defensive Guard (1-10): <span id="opponentDefensiveGuardVal">5</span>
+              </label>
+              <input type="range" id="opponentDefensiveGuard" name="opponentDefensiveGuard" min="1" max="10" value="5"
+                class="w-full accent-red-600"
+                oninput="document.getElementById('opponentDefensiveGuardVal').textContent = this.value">
             </div>
+
             <div>
-              <label class="block mb-1 text-gray-300" for="opponentCageAwareness">Cage Awareness (1-10)</label>
-              <input type="number" min="1" max="10" id="opponentCageAwareness" name="opponentCageAwareness"
-                placeholder="Cage Awareness (1-10)" class="p-2 rounded bg-gray-700 w-full">
+              <label class="block mb-1 text-gray-300" for="opponentCageAwareness">
+                Cage Awareness (1-10): <span id="opponentCageAwarenessVal">5</span>
+              </label>
+              <input type="range" id="opponentCageAwareness" name="opponentCageAwareness" min="1" max="10" value="5"
+                class="w-full accent-red-600"
+                oninput="document.getElementById('opponentCageAwarenessVal').textContent = this.value">
             </div>
           </div>
         </div>
@@ -495,34 +611,57 @@
           <h3 class="font-semibold mb-2">Fight IQ / Psychological Attributes</h3>
           <div class="grid md:grid-cols-3 gap-4">
             <div>
-              <label class="block mb-1 text-gray-300" for="opponentTacticalIQ">Tactical IQ (1-10)</label>
-              <input type="number" min="1" max="10" id="opponentTacticalIQ" name="opponentTacticalIQ"
-                placeholder="Tactical IQ (1-10)" class="p-2 rounded bg-gray-700 w-full">
+              <label class="block mb-1 text-gray-300" for="opponentTacticalIQ">
+                Tactical IQ (1-10): <span id="opponentTacticalIQVal">5</span>
+              </label>
+              <input type="range" id="opponentTacticalIQ" name="opponentTacticalIQ" min="1" max="10" value="5"
+                class="w-full accent-red-600"
+                oninput="document.getElementById('opponentTacticalIQVal').textContent = this.value">
             </div>
+
             <div>
-              <label class="block mb-1 text-gray-300" for="opponentAdaptability">Adaptability (1-10)</label>
-              <input type="number" min="1" max="10" id="opponentAdaptability" name="opponentAdaptability"
-                placeholder="Adaptability (1-10)" class="p-2 rounded bg-gray-700 w-full">
+              <label class="block mb-1 text-gray-300" for="opponentAdaptability">
+                Adaptability (1-10): <span id="opponentAdaptabilityVal">5</span>
+              </label>
+              <input type="range" id="opponentAdaptability" name="opponentAdaptability" min="1" max="10" value="5"
+                class="w-full accent-red-600"
+                oninput="document.getElementById('opponentAdaptabilityVal').textContent = this.value">
             </div>
+
             <div>
-              <label class="block mb-1 text-gray-300" for="opponentComposure">Composure (1-10)</label>
-              <input type="number" min="1" max="10" id="opponentComposure" name="opponentComposure"
-                placeholder="Composure (1-10)" class="p-2 rounded bg-gray-700 w-full">
+              <label class="block mb-1 text-gray-300" for="opponentComposure">
+                Composure (1-10): <span id="opponentComposureVal">5</span>
+              </label>
+              <input type="range" id="opponentComposure" name="opponentComposure" min="1" max="10" value="5"
+                class="w-full accent-red-600"
+                oninput="document.getElementById('opponentComposureVal').textContent = this.value">
             </div>
+
             <div>
-              <label class="block mb-1 text-gray-300" for="opponentAggression">Aggression (1-10)</label>
-              <input type="number" min="1" max="10" id="opponentAggression" name="opponentAggression"
-                placeholder="Aggression (1-10)" class="p-2 rounded bg-gray-700 w-full">
+              <label class="block mb-1 text-gray-300" for="opponentAggression">
+                Aggression (1-10): <span id="opponentAggressionVal">5</span>
+              </label>
+              <input type="range" id="opponentAggression" name="opponentAggression" min="1" max="10" value="5"
+                class="w-full accent-red-600"
+                oninput="document.getElementById('opponentAggressionVal').textContent = this.value">
             </div>
+
             <div>
-              <label class="block mb-1 text-gray-300" for="opponentPatience">Patience (1-10)</label>
-              <input type="number" min="1" max="10" id="opponentPatience" name="opponentPatience"
-                placeholder="Patience (1-10)" class="p-2 rounded bg-gray-700 w-full">
+              <label class="block mb-1 text-gray-300" for="opponentPatience">
+                Patience (1-10): <span id="opponentPatienceVal">5</span>
+              </label>
+              <input type="range" id="opponentPatience" name="opponentPatience" min="1" max="10" value="5"
+                class="w-full accent-red-600"
+                oninput="document.getElementById('opponentPatienceVal').textContent = this.value">
             </div>
+
             <div>
-              <label class="block mb-1 text-gray-300" for="opponentRiskTolerance">Risk Tolerance (1-10)</label>
-              <input type="number" min="1" max="10" id="opponentRiskTolerance" name="opponentRiskTolerance"
-                placeholder="Risk Tolerance (1-10)" class="p-2 rounded bg-gray-700 w-full">
+              <label class="block mb-1 text-gray-300" for="opponentRiskTolerance">
+                Risk Tolerance (1-10): <span id="opponentRiskToleranceVal">5</span>
+              </label>
+              <input type="range" id="opponentRiskTolerance" name="opponentRiskTolerance" min="1" max="10" value="5"
+                class="w-full accent-red-600"
+                oninput="document.getElementById('opponentRiskToleranceVal').textContent = this.value">
             </div>
           </div>
         </div>
