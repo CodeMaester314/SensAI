@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MMA Gameplan Input</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    select option:checked {
+      background-color: #dc2626;
+      /* red-600 */
+      color: white;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-900 text-white font-sans">
+
+  <header class="bg-red-700 py-6 text-center">
+    <h1 class="text-3xl font-bold">MMA Gameplan Input</h1>
+    <p class="mt-2 text-gray-200">Enter fighter stats, opponent info, and ruleset to generate your gameplan</p>
+  </header>
+
+  <main class="py-12 px-6 md:px-20">
+    <form class="space-y-12">
+
+      <!-- User Stats -->
+      <section class="bg-gray-800 p-8 rounded-xl shadow-lg">
+        <h2 class="text-2xl font-bold mb-6">Your Stats</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+
+          <!-- User Physical Attributes -->
+          <div>
+            <h3 class="font-semibold mb-2">Physical Attributes</h3>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block mb-1 text-gray-300" for="userAge">Age</label>
+                <input type="number" id="userAge" name="userAge" placeholder="Age"
+                  class="p-2 rounded bg-gray-700 w-full">
+              </div>
+              <div>
+                <label class="block mb-1 text-gray-300" for="userHeight">Height (cm)</label>
+                <input type="number" id="userHeight" name="userHeight" placeholder="Height (cm)"
+                  class="p-2 rounded bg-gray-700 w-full">
+              </div>
+              <div>
+                <label class="block mb-1 text-gray-300" for="userReach">Reach (cm)</label>
+                <input type="number" id="userReach" name="userReach" placeholder="Reach (cm)"
+                  class="p-2 rounded bg-gray-700 w-full">
+              </div>
+              <div>
+                <label class="block mb-1 text-gray-300" for="userWeight">Weight (kg)</label>
+                <input type="number" id="userWeight" name="userWeight" placeholder="Weight (kg)"
+                  class="p-2 rounded bg-gray-700 w-full">
+              </div>
+              <div>
+                <label class="block mb-1 text-gray-300" for="userCardio">Cardio (1-10)</label>
+                <input type="number" min="1" max="10" id="userCardio" name="userCardio" placeholder="Cardio (1-10)"
+                  class="p-2 rounded bg-gray-700 w-full">
+              </div>
+              <div>
+                <label class="block mb-1 text-gray-300" for="userDurability">Durability / Chin (1-10)</label>
+                <input type="number" min="1" max="10" id="userDurability" name="userDurability"
+                  placeholder="Durability / Chin (1-10)" class="p-2 rounded bg-gray-700 w-full">
+              </div>
+              <div>
+                <label class="block mb-1 text-gray-300" for="userPower">Power (1-10)</label>
+                <input type="number" min="1" max="10" id="userPower" name="userPower" placeholder="Power (1-10)"
+                  class="p-2 rounded bg-gray-700 w-full">
+              </div>
+              <div>
+                <label class="block mb-1 text-gray-300" for="userSpeed">Speed (1-10)</label>
+                <input type="number" min="1" max="10" id="userSpeed" name="userSpeed" placeholder="Speed (1-10)"
+                  class="p-2 rounded bg-gray-700 w-full">
+              </div>
+            </div>
+          </div>
+
+          <!-- User Skill Attributes -->
+          <div>
+            <h3 class="font-semibold mb-4">Skill Attributes</h3>
+
+            <!-- First Row: Striking -->
+            <div class="grid md:grid-cols-2 gap-4 mb-4">
+              <div>
+                <label class="block mb-1 text-gray-300" for="userStrikingType">Striking Type</label>
+                <select id="userStrikingType" name="userStrikingType" class="p-2 rounded bg-gray-700 w-full">
+                  <option value="" selected disabled>Striking Type</option>
+                  <option>Boxer</option>
+                  <option>Muay Thai</option>
+                  <option>Kickboxer</option>
+                  <option>Karate</option>
+                  <option>TKD</option>
+                  <option>Brawler</option>
+                  <option>Counter-striker</option>
+                </select>
+              </div>
+              <div>
+                <label class="block mb-1 text-gray-300" for="userStrikingLevel">Striking Level</label>
+                <select id="userStrikingLevel" name="userStrikingLevel" class="p-2 rounded bg-gray-700 w-full">
+                  <option selected disabled>Striking Level</option>
+                  <option>Beginner</option>
+                  <option>Intermediate</option>
+                  <option>Advanced</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Second Row: Grappling -->
+            <div class="grid md:grid-cols-3 gap-4">
+              <div>
+                <label class="block mb-1 text-gray-300" for="userGrapplingType">Grappling Type</label>
+                <select id="userGrapplingType" name="userGrapplingType" class="p-2 rounded bg-gray-700 w-full">
+                  <option selected disabled>Grappling Type</option>
+                  <option>Wrestler</option>
+                  <option>BJJ</option>
+                  <option>Judo</option>
+                  <option>Sambo</option>
+                  <option>None</option>
+                </select>
+              </div>
+              <div>
+                <label class="block mb-1 text-gray-300" for="userGrapplingStyle">Grappling Style</label>
+                <select id="userGrapplingStyle" name="userGrapplingStyle" class="p-2 rounded bg-gray-700 w-full">
+                  <option selected disabled>Grappling Style</option>
+                  <option>Top Pressure</option>
+                  <option>Guard Player</option>
+                  <option>Submission Hunter</option>
+                  <option>Cage Wrestler</option>
+                </select>
+              </div>
+              <div>
+                <label class="block mb-1 text-gray-300" for="userGrapplingLevel">Grappling Level</label>
+                <select id="userGrapplingLevel" name="userGrapplingLevel" class="p-2 rounded bg-gray-700 w-full">
+                  <option selected disabled>Grappling Level</option>
+                  <option>Beginner</option>
+                  <option>Intermediate</option>
+                  <option>Advanced</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- User Style Preferences -->
+        <div class="mt-6">
+          <h3 class="font-semibold mb-2">Style Preferences</h3>
+          <div class="grid md:grid-cols-3 gap-4">
+            <div>
+              <label class="block mb-1 text-gray-300" for="userStance">Stance</label>
+              <select id="userStance" name="userStance" class="p-2 rounded bg-gray-700 w-full">
+                <option selected disabled>Stance</option>
+                <option>Orthodox</option>
+                <option>Southpaw</option>
+                <option>Switch</option>
+              </select>
+            </div>
+            <div>
+              <label class="block mb-1 text-gray-300" for="userRange">Preferred Range</label>
+              <select id="userRange" name="userRange" class="p-2 rounded bg-gray-700 w-full">
+                <option selected disabled>Preferred Range</option>
+                <option>Long</option>
+                <option>Mid</option>
+                <option>Close</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Signature Moves -->
+          <div class="col-span-3 h-48 overflow-y-auto bg-gray-700 p-2 rounded mt-4">
+            <p class="font-semibold mb-2">Signature Moves</p>
+            <div class="grid grid-cols-2 gap-2">
+              <label class="flex items-center"><input type="checkbox" name="userMoves[]" class="mr-2">Jab</label>
+              <label class="flex items-center"><input type="checkbox" name="userMoves[]" class="mr-2">Cross</label>
+              <label class="flex items-center"><input type="checkbox" name="userMoves[]" class="mr-2">Hook</label>
+              <label class="flex items-center"><input type="checkbox" name="userMoves[]" class="mr-2">Uppercut</label>
+              <label class="flex items-center"><input type="checkbox" name="userMoves[]" class="mr-2">Overhand</label>
+              <label class="flex items-center"><input type="checkbox" name="userMoves[]" class="mr-2">Teep / Front
+                Kick</label>
+              <label class="flex items-center"><input type="checkbox" name="userMoves[]" class="mr-2">Roundhouse
+                Kick</label>
+              <label class="flex items-center"><input type="checkbox" name="userMoves[]" class="mr-2">Leg Kick</label>
+              <label class="flex items-center"><input type="checkbox" name="userMoves[]" class="mr-2">Push Kick</label>
+              <label class="flex items-center"><input type="checkbox" name="userMoves[]" class="mr-2">Body Kick</label>
+              <label class="flex items-center"><input type="checkbox" name="userMoves[]" class="mr-2">Spinning Back
+                Fist</label>
+              <label class="flex items-center"><input type="checkbox" name="userMoves[]" class="mr-2">Elbow
+                Strike</label>
+              <label class="flex items-center"><input type="checkbox" name="userMoves[]" class="mr-2">Knee
+                Strike</label>
+              <label class="flex items-center"><input type="checkbox" name="userMoves[]" class="mr-2">Head Kick</label>
+              <label class="flex items-center"><input type="checkbox" name="userMoves[]" class="mr-2">Switch
+                Kick</label>
+              <label class="flex items-center"><input type="checkbox" name="userMoves[]" class="mr-2">Back Kick</label>
+              <label class="flex items-center"><input type="checkbox" name="userMoves[]" class="mr-2">Spinning
+                Kick</label>
+              <label class="flex items-center"><input type="checkbox" name="userMoves[]" class="mr-2">Superman
+                Punch</label>
+              <label class="flex items-center"><input type="checkbox" name="userMoves[]" class="mr-2">Hook Kick</label>
+              <label class="flex items-center"><input type="checkbox" name="userMoves[]" class="mr-2">Backfist</label>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Defensive Attributes -->
+        <div class="mt-6">
+          <h3 class="font-semibold mb-2">Defensive Attributes</h3>
+          <div class="grid md:grid-cols-3 gap-4">
+            <div>
+              <label class="block mb-1 text-gray-300" for="userFootwork">Footwork (1-10)</label>
+              <input type="number" min="1" max="10" id="userFootwork" name="userFootwork" placeholder="Footwork (1-10)"
+                class="p-2 rounded bg-gray-700 w-full">
+            </div>
+            <div>
+              <label class="block mb-1 text-gray-300" for="userHeadMovement">Head Movement (1-10)</label>
+              <input type="number" min="1" max="10" id="userHeadMovement" name="userHeadMovement"
+                placeholder="Head Movement (1-10)" class="p-2 rounded bg-gray-700 w-full">
+            </div>
+            <div>
+              <label class="block mb-1 text-gray-300" for="userDefensiveGuard">Defensive Guard (1-10)</label>
+              <input type="number" min="1" max="10" id="userDefensiveGuard" name="userDefensiveGuard"
+                placeholder="Defensive Guard (1-10)" class="p-2 rounded bg-gray-700 w-full">
+            </div>
+            <div>
+              <label class="block mb-1 text-gray-300" for="userCageAwareness">Cage Awareness (1-10)</label>
+              <input type="number" min="1" max="10" id="userCageAwareness" name="userCageAwareness"
+                placeholder="Cage Awareness (1-10)" class="p-2 rounded bg-gray-700 w-full">
+            </div>
+          </div>
+        </div>
+
+        <!-- Fight IQ -->
+        <div class="mt-6">
+          <h3 class="font-semibold mb-2">Fight IQ / Psychological Attributes</h3>
+          <div class="grid md:grid-cols-3 gap-4">
+            <div>
+              <label class="block mb-1 text-gray-300" for="userTacticalIQ">Tactical IQ (1-10)</label>
+              <input type="number" min="1" max="10" id="userTacticalIQ" name="userTacticalIQ"
+                placeholder="Tactical IQ (1-10)" class="p-2 rounded bg-gray-700 w-full">
+            </div>
+            <div>
+              <label class="block mb-1 text-gray-300" for="userAdaptability">Adaptability (1-10)</label>
+              <input type="number" min="1" max="10" id="userAdaptability" name="userAdaptability"
+                placeholder="Adaptability (1-10)" class="p-2 rounded bg-gray-700 w-full">
+            </div>
+            <div>
+              <label class="block mb-1 text-gray-300" for="userComposure">Composure (1-10)</label>
+              <input type="number" min="1" max="10" id="userComposure" name="userComposure"
+                placeholder="Composure (1-10)" class="p-2 rounded bg-gray-700 w-full">
+            </div>
+            <div>
+              <label class="block mb-1 text-gray-300" for="userAggression">Aggression (1-10)</label>
+              <input type="number" min="1" max="10" id="userAggression" name="userAggression"
+                placeholder="Aggression (1-10)" class="p-2 rounded bg-gray-700 w-full">
+            </div>
+            <div>
+              <label class="block mb-1 text-gray-300" for="userPatience">Patience (1-10)</label>
+              <input type="number" min="1" max="10" id="userPatience" name="userPatience" placeholder="Patience (1-10)"
+                class="p-2 rounded bg-gray-700 w-full">
+            </div>
+            <div>
+              <label class="block mb-1 text-gray-300" for="userRiskTolerance">Risk Tolerance (1-10)</label>
+              <input type="number" min="1" max="10" id="userRiskTolerance" name="userRiskTolerance"
+                placeholder="Risk Tolerance (1-10)" class="p-2 rounded bg-gray-700 w-full">
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Opponent Stats -->
+      <!-- ... Repeat same labeling structure as User Stats for Opponent inputs ... -->
+      <section class="bg-gray-800 p-8 rounded-xl shadow-lg">
+        <h2 class="text-2xl font-bold mb-6">Opponent's Stats</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+
+          <!-- Opponent Physical Attributes -->
+          <div>
+            <h3 class="font-semibold mb-2">Physical Attributes</h3>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block mb-1 text-gray-300" for="opponentAge">Age</label>
+                <input type="number" id="opponentAge" name="opponentAge" placeholder="Age"
+                  class="p-2 rounded bg-gray-700 w-full">
+              </div>
+              <div>
+                <label class="block mb-1 text-gray-300" for="opponentHeight">Height (cm)</label>
+                <input type="number" id="opponentHeight" name="opponentHeight" placeholder="Height (cm)"
+                  class="p-2 rounded bg-gray-700 w-full">
+              </div>
+              <div>
+                <label class="block mb-1 text-gray-300" for="opponentReach">Reach (cm)</label>
+                <input type="number" id="opponentReach" name="opponentReach" placeholder="Reach (cm)"
+                  class="p-2 rounded bg-gray-700 w-full">
+              </div>
+              <div>
+                <label class="block mb-1 text-gray-300" for="opponentWeight">Weight (kg)</label>
+                <input type="number" id="opponentWeight" name="opponentWeight" placeholder="Weight (kg)"
+                  class="p-2 rounded bg-gray-700 w-full">
+              </div>
+              <div>
+                <label class="block mb-1 text-gray-300" for="opponentCardio">Cardio (1-10)</label>
+                <input type="number" min="1" max="10" id="opponentCardio" name="opponentCardio"
+                  placeholder="Cardio (1-10)" class="p-2 rounded bg-gray-700 w-full">
+              </div>
+              <div>
+                <label class="block mb-1 text-gray-300" for="opponentDurability">Durability / Chin (1-10)</label>
+                <input type="number" min="1" max="10" id="opponentDurability" name="opponentDurability"
+                  placeholder="Durability / Chin (1-10)" class="p-2 rounded bg-gray-700 w-full">
+              </div>
+              <div>
+                <label class="block mb-1 text-gray-300" for="opponentPower">Power (1-10)</label>
+                <input type="number" min="1" max="10" id="opponentPower" name="opponentPower" placeholder="Power (1-10)"
+                  class="p-2 rounded bg-gray-700 w-full">
+              </div>
+              <div>
+                <label class="block mb-1 text-gray-300" for="opponentSpeed">Speed (1-10)</label>
+                <input type="number" min="1" max="10" id="opponentSpeed" name="opponentSpeed" placeholder="Speed (1-10)"
+                  class="p-2 rounded bg-gray-700 w-full">
+              </div>
+            </div>
+          </div>
+
+          <!-- opponent Skill Attributes -->
+          <div>
+            <h3 class="font-semibold mb-4">Skill Attributes</h3>
+
+            <!-- First Row: Striking -->
+            <div class="grid md:grid-cols-2 gap-4 mb-4">
+              <div>
+                <label class="block mb-1 text-gray-300" for="opponentStrikingType">Striking Type</label>
+                <select id="opponentStrikingType" name="opponentStrikingType" class="p-2 rounded bg-gray-700 w-full">
+                  <option value="" selected disabled>Striking Type</option>
+                  <option>Boxer</option>
+                  <option>Muay Thai</option>
+                  <option>Kickboxer</option>
+                  <option>Karate</option>
+                  <option>TKD</option>
+                  <option>Brawler</option>
+                  <option>Counter-striker</option>
+                </select>
+              </div>
+              <div>
+                <label class="block mb-1 text-gray-300" for="opponentStrikingLevel">Striking Level</label>
+                <select id="opponentStrikingLevel" name="opponentStrikingLevel" class="p-2 rounded bg-gray-700 w-full">
+                  <option selected disabled>Striking Level</option>
+                  <option>Beginner</option>
+                  <option>Intermediate</option>
+                  <option>Advanced</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Second Row: Grappling -->
+            <div class="grid md:grid-cols-3 gap-4">
+              <div>
+                <label class="block mb-1 text-gray-300" for="opponentGrapplingType">Grappling Type</label>
+                <select id="opponentGrapplingType" name="opponentGrapplingType" class="p-2 rounded bg-gray-700 w-full">
+                  <option selected disabled>Grappling Type</option>
+                  <option>Wrestler</option>
+                  <option>BJJ</option>
+                  <option>Judo</option>
+                  <option>Sambo</option>
+                  <option>None</option>
+                </select>
+              </div>
+              <div>
+                <label class="block mb-1 text-gray-300" for="opponentGrapplingStyle">Grappling Style</label>
+                <select id="opponentGrapplingStyle" name="opponentGrapplingStyle"
+                  class="p-2 rounded bg-gray-700 w-full">
+                  <option selected disabled>Grappling Style</option>
+                  <option>Top Pressure</option>
+                  <option>Guard Player</option>
+                  <option>Submission Hunter</option>
+                  <option>Cage Wrestler</option>
+                </select>
+              </div>
+              <div>
+                <label class="block mb-1 text-gray-300" for="opponentGrapplingLevel">Grappling Level</label>
+                <select id="opponentGrapplingLevel" name="opponentGrapplingLevel"
+                  class="p-2 rounded bg-gray-700 w-full">
+                  <option selected disabled>Grappling Level</option>
+                  <option>Beginner</option>
+                  <option>Intermediate</option>
+                  <option>Advanced</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- opponent Style Preferences -->
+        <div class="mt-6">
+          <h3 class="font-semibold mb-2">Style Preferences</h3>
+          <div class="grid md:grid-cols-3 gap-4">
+            <div>
+              <label class="block mb-1 text-gray-300" for="opponentStance">Stance</label>
+              <select id="opponentStance" name="opponentStance" class="p-2 rounded bg-gray-700 w-full">
+                <option selected disabled>Stance</option>
+                <option>Orthodox</option>
+                <option>Southpaw</option>
+                <option>Switch</option>
+              </select>
+            </div>
+            <div>
+              <label class="block mb-1 text-gray-300" for="opponentRange">Preferred Range</label>
+              <select id="opponentRange" name="opponentRange" class="p-2 rounded bg-gray-700 w-full">
+                <option selected disabled>Preferred Range</option>
+                <option>Long</option>
+                <option>Mid</option>
+                <option>Close</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Signature Moves -->
+          <div class="col-span-3 h-48 overflow-y-auto bg-gray-700 p-2 rounded mt-4">
+            <p class="font-semibold mb-2">Signature Moves</p>
+            <div class="grid grid-cols-2 gap-2">
+              <label class="flex items-center"><input type="checkbox" name="opponentMoves[]" class="mr-2">Jab</label>
+              <label class="flex items-center"><input type="checkbox" name="opponentMoves[]" class="mr-2">Cross</label>
+              <label class="flex items-center"><input type="checkbox" name="opponentMoves[]" class="mr-2">Hook</label>
+              <label class="flex items-center"><input type="checkbox" name="opponentMoves[]"
+                  class="mr-2">Uppercut</label>
+              <label class="flex items-center"><input type="checkbox" name="opponentMoves[]"
+                  class="mr-2">Overhand</label>
+              <label class="flex items-center"><input type="checkbox" name="opponentMoves[]" class="mr-2">Teep / Front
+                Kick</label>
+              <label class="flex items-center"><input type="checkbox" name="opponentMoves[]" class="mr-2">Roundhouse
+                Kick</label>
+              <label class="flex items-center"><input type="checkbox" name="opponentMoves[]" class="mr-2">Leg
+                Kick</label>
+              <label class="flex items-center"><input type="checkbox" name="opponentMoves[]" class="mr-2">Push
+                Kick</label>
+              <label class="flex items-center"><input type="checkbox" name="opponentMoves[]" class="mr-2">Body
+                Kick</label>
+              <label class="flex items-center"><input type="checkbox" name="opponentMoves[]" class="mr-2">Spinning Back
+                Fist</label>
+              <label class="flex items-center"><input type="checkbox" name="opponentMoves[]" class="mr-2">Elbow
+                Strike</label>
+              <label class="flex items-center"><input type="checkbox" name="opponentMoves[]" class="mr-2">Knee
+                Strike</label>
+              <label class="flex items-center"><input type="checkbox" name="opponentMoves[]" class="mr-2">Head
+                Kick</label>
+              <label class="flex items-center"><input type="checkbox" name="opponentMoves[]" class="mr-2">Switch
+                Kick</label>
+              <label class="flex items-center"><input type="checkbox" name="opponentMoves[]" class="mr-2">Back
+                Kick</label>
+              <label class="flex items-center"><input type="checkbox" name="opponentMoves[]" class="mr-2">Spinning
+                Kick</label>
+              <label class="flex items-center"><input type="checkbox" name="opponentMoves[]" class="mr-2">Superman
+                Punch</label>
+              <label class="flex items-center"><input type="checkbox" name="opponentMoves[]" class="mr-2">Hook
+                Kick</label>
+              <label class="flex items-center"><input type="checkbox" name="opponentMoves[]"
+                  class="mr-2">Backfist</label>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Defensive Attributes -->
+        <div class="mt-6">
+          <h3 class="font-semibold mb-2">Defensive Attributes</h3>
+          <div class="grid md:grid-cols-3 gap-4">
+            <div>
+              <label class="block mb-1 text-gray-300" for="opponentFootwork">Footwork (1-10)</label>
+              <input type="number" min="1" max="10" id="opponentFootwork" name="opponentFootwork"
+                placeholder="Footwork (1-10)" class="p-2 rounded bg-gray-700 w-full">
+            </div>
+            <div>
+              <label class="block mb-1 text-gray-300" for="opponentHeadMovement">Head Movement (1-10)</label>
+              <input type="number" min="1" max="10" id="opponentHeadMovement" name="opponentHeadMovement"
+                placeholder="Head Movement (1-10)" class="p-2 rounded bg-gray-700 w-full">
+            </div>
+            <div>
+              <label class="block mb-1 text-gray-300" for="opponentDefensiveGuard">Defensive Guard (1-10)</label>
+              <input type="number" min="1" max="10" id="opponentDefensiveGuard" name="opponentDefensiveGuard"
+                placeholder="Defensive Guard (1-10)" class="p-2 rounded bg-gray-700 w-full">
+            </div>
+            <div>
+              <label class="block mb-1 text-gray-300" for="opponentCageAwareness">Cage Awareness (1-10)</label>
+              <input type="number" min="1" max="10" id="opponentCageAwareness" name="opponentCageAwareness"
+                placeholder="Cage Awareness (1-10)" class="p-2 rounded bg-gray-700 w-full">
+            </div>
+          </div>
+        </div>
+
+        <!-- Fight IQ -->
+        <div class="mt-6">
+          <h3 class="font-semibold mb-2">Fight IQ / Psychological Attributes</h3>
+          <div class="grid md:grid-cols-3 gap-4">
+            <div>
+              <label class="block mb-1 text-gray-300" for="opponentTacticalIQ">Tactical IQ (1-10)</label>
+              <input type="number" min="1" max="10" id="opponentTacticalIQ" name="opponentTacticalIQ"
+                placeholder="Tactical IQ (1-10)" class="p-2 rounded bg-gray-700 w-full">
+            </div>
+            <div>
+              <label class="block mb-1 text-gray-300" for="opponentAdaptability">Adaptability (1-10)</label>
+              <input type="number" min="1" max="10" id="opponentAdaptability" name="opponentAdaptability"
+                placeholder="Adaptability (1-10)" class="p-2 rounded bg-gray-700 w-full">
+            </div>
+            <div>
+              <label class="block mb-1 text-gray-300" for="opponentComposure">Composure (1-10)</label>
+              <input type="number" min="1" max="10" id="opponentComposure" name="opponentComposure"
+                placeholder="Composure (1-10)" class="p-2 rounded bg-gray-700 w-full">
+            </div>
+            <div>
+              <label class="block mb-1 text-gray-300" for="opponentAggression">Aggression (1-10)</label>
+              <input type="number" min="1" max="10" id="opponentAggression" name="opponentAggression"
+                placeholder="Aggression (1-10)" class="p-2 rounded bg-gray-700 w-full">
+            </div>
+            <div>
+              <label class="block mb-1 text-gray-300" for="opponentPatience">Patience (1-10)</label>
+              <input type="number" min="1" max="10" id="opponentPatience" name="opponentPatience"
+                placeholder="Patience (1-10)" class="p-2 rounded bg-gray-700 w-full">
+            </div>
+            <div>
+              <label class="block mb-1 text-gray-300" for="opponentRiskTolerance">Risk Tolerance (1-10)</label>
+              <input type="number" min="1" max="10" id="opponentRiskTolerance" name="opponentRiskTolerance"
+                placeholder="Risk Tolerance (1-10)" class="p-2 rounded bg-gray-700 w-full">
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Fight Ruleset -->
+      <section class="bg-gray-800 p-8 rounded-xl shadow-lg">
+        <h2 class="text-2xl font-bold mb-4">Fight Ruleset</h2>
+        <label class="block mb-1 text-gray-300" for="ruleset">Select Ruleset</label>
+        <select id="ruleset" name="ruleset" class="p-3 rounded bg-gray-700 w-full">
+          <option selected disabled>Select Ruleset</option>
+          <option>UFC</option>
+          <option>ONE Championship</option>
+          <option>Bellator MMA</option>
+          <option>IBJJF Gi</option>
+          <option>ADCC No-Gi</option>
+          <option>Professional Boxing</option>
+          <option>Olympic Boxing</option>
+          <option>K-1 Kickboxing</option>
+          <option>Muay Thai IFMA</option>
+          <option>Muay Thai WMC</option>
+          <option>Sanda</option>
+          <option>Bare-knuckle Boxing</option>
+          <option>Shootfighting</option>
+        </select>
+      </section>
+
+      <!-- Submit Button -->
+      <div class="text-center">
+        <button type="submit"
+          class="bg-red-600 hover:bg-red-700 text-white font-bold px-12 py-4 rounded-lg transition">Generate
+          Gameplan</button>
+      </div>
+
+    </form>
+  </main>
+
+  <footer class="bg-gray-900 py-8 text-center text-gray-400">
+    &copy; 2025 MMA Gameplan Coach. All rights reserved.
+  </footer>
+
+</body>
+<script>
+  document.querySelector('form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const data = {};
+    formData.forEach((value, key) => {
+      if (data[key]) {
+        data[key] = [].concat(data[key], value);
+      } else {
+        data[key] = value;
+      }
+    });
+    localStorage.setItem('mmaInput', JSON.stringify(data));
+    window.location.href = 'gameplan.html';
+  });
+</script>
+
+</html>

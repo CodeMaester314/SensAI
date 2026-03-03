@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MMA Gameplan Coach</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  Remove-Item -Recurse -Force .git
+  <!-- Japanese fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&family=Noto+Sans+JP&display=swap"
+    rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: 'Sawarabi Mincho', serif;
+      letter-spacing: 1px;
+    }
+
+    .dojo-paper {
+      background-image: url('https://www.transparenttextures.com/patterns/japanese-paper.png');
+    }
+
+    .bamboo-border {
+      border-top: 4px solid #aa8b56;
+      border-bottom: 4px solid #aa8b56;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    .hover-strike:hover {
+      transform: scale(1.08) rotate(-1deg);
+      transition: 0.3s ease-in-out;
+      filter: brightness(1.15);
+    }
+
+    .gold {
+      color: #d4b56a;
+    }
+
+    .gold-bg {
+      background-color: #d4b56a;
+    }
+
+    .red-glow {
+      box-shadow: 0 0 25px rgba(255, 50, 50, 0.3);
+    }
+  </style>
+</head>
+
+<body class="bg-black text-white">
+
+  <!-- Hero Section -->
+  <section class="py-32 text-center dojo-paper bg-gradient-to-b from-red-950 via-black to-black bamboo-border">
+    <h1 class="text-6xl md:text-7xl font-bold mb-4 gold drop-shadow-lg">
+      武の道 SensAI<br>
+      <h1></h1>
+      <h2 class="text-6xl md:text-4xl mb-4 gold drop-shadow-lg">
+        Honor the craft. Hone your edge.</h2>
+      <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto text-gray-200">
+
+        <i>SensAI is a digital sensei — a virtual smart coach that blends tactical templates, signature-move
+          libraries, and adaptive training cues into concise, actionable
+          strategies for training and competition; tailors combat blueprints for every matchup and scenario.</i>
+      </p>
+
+      <!-- <a href="#features" -->
+      <a href="#steps"
+        class="bg-red-700 hover:bg-red-600 text-white font-bold px-10 py-4 rounded-lg shadow-xl hover-strike red-glow text-lg">
+        Discover How It Works
+      </a>
+  </section>
+
+  <!-- How it Works Section -->
+  <section id="steps" class="bg-black py-24 px-6 md:px-20 dojo-paper ">
+    <h2 class="text-4xl font-bold text-center mb-12 gold">
+      流れ — The Path to Your Gameplan
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-12 text-center">
+      <div class="p-6 bg-red-800/50 rounded-xl shadow-lg hover-strike">
+        <h3 class="text-2xl font-semibold mb-4 gold">Know yourself.</h3>
+        <p class="text-gray-200">Your height, reach, strengths, weaknesses — your warrior profile.</p>
+      </div>
+
+      <div class="p-6 bg-red-800/50 rounded-xl shadow-lg hover-strike">
+        <h3 class="text-2xl font-semibold mb-4 gold">Know your opponent.</h3>
+        <p class="text-gray-200">Styles clash — reveal their tendencies to prepare your counterpath.</p>
+      </div>
+
+      <div class="p-6 bg-red-800/50 rounded-xl shadow-lg hover-strike">
+        <h3 class="text-2xl font-semibold mb-4 gold">Know when to strike.</h3>
+        <p class="text-gray-200">A fully structured gameplan emerges — sharpened like a katana.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-24 px-6 md:px-20 bg-black bamboo-border">
+    <h2 class="text-4xl font-bold text-center mb-12 gold">
+      選ばれる理由 — Why Combat Athletes Trust SensAI
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-12 text-center">
+      <div class="bg-red-900/70 p-6 rounded-xl shadow-lg hover-strike dojo-paper">
+        <h3 class="text-2xl font-semibold mb-4 gold">Tailored Strategies</h3>
+        <p class="text-gray-200">A tactical gameplan crafted specifically for you and your opponent's style, skill and
+          physique.</p>
+      </div>
+
+      <div class="bg-red-900/70 p-6 rounded-xl shadow-lg hover-strike dojo-paper">
+        <h3 class="text-2xl font-semibold mb-4 gold">Round-By-Round Analysis</h3>
+        <p class="text-gray-200">Get SensAI in your corner for mid fight adjustments that turn tides in your favor.</p>
+      </div>
+
+      <div class="bg-red-900/70 p-6 rounded-xl shadow-lg hover-strike dojo-paper">
+        <h3 class="text-2xl font-semibold mb-4 gold">Multiple Rulesets Respected</h3>
+        <p class="text-gray-200">UnifiedMMA&trade;, SubOnlyBJJ&trade;, ADCC-Nogi&trade;, FullContact&trade;,
+          NoRules&trade;
+          -your
+          strategy
+          molds to
+          the demands of the battlefield.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="py-24 text-center bg-black">
+    <h2 class="text-4xl font-bold mb-6 gold">Strike Hard. Strike First. No Mercy.</h2>
+    <p class="mb-8 max-w-xl mx-auto text-gray-300">
+      Begin your training — your first personalized gameplan awaits.
+    </p>
+
+    <a href="input.html"
+      class="bg-red-700 hover:bg-red-600 text-white font-bold px-12 py-4 rounded-lg shadow-xl hover-strike text-xl red-glow">
+      Begin Training
+    </a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black py-8 text-center text-gray-400 border-t border-red-700 dojo-paper">
+    <p class="opacity-80">&copy; 2025 MMA Gameplan Coach — Honor, Technique, Discipline.</p>
+  </footer>
+
+</body>
+
+</html>
