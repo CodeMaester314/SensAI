@@ -33,28 +33,86 @@ app.get("/gameplan.html", (req, res) => {
 
 // API Route: Generate AI Gameplan
 app.post("/generate-gameplan", async (req, res) => {
-    const userData = req.body;
 
-    if (!userData || Object.keys(userData).length === 0) {
+    const formData = req.body;
+
+    if (!formData || Object.keys(formData).length === 0) {
         return res.status(400).json({ error: "No fighter data provided." });
     }
+
+    // Split incoming flat form data into user / opponent / ruleset
+    const fighter = {};
+    const opponent = {};
+    let ruleset = formData.ruleset || "Unknown ruleset";
+
+    for (const [key, value] of Object.entries(formData)) {
+        if (key.startsWith("user")) {
+            fighter[key] = value;
+        } else if (key.startsWith("opponent")) {
+            opponent[key] = value;
+        }
+    }
+
+    console.log("FIGHTER DATA:", fighter);
+    console.log("OPPONENT DATA:", opponent);
+    console.log("RULESET:", ruleset);
 
     const prompt = `
 You are an experienced MMA coach.
 
-Generate a detailed MMA gameplan for a fighter with these stats:
-${JSON.stringify(userData, null, 2)}
+Analyze BOTH the fighter and the opponent.
+
+FIGHTER STATS:
+${JSON.stringify(fighter, null, 2)}
+
+OPPONENT STATS:
+${JSON.stringify(opponent, null, 2)}
+
+RULESET:
+${ruleset}
+
+Create a detailed gameplan that is specifically based on the matchup between these two fighters.
 
 Include:
-- Round-by-round strategy
 - Recommended drills
-- Counters for opponent weaknesses
-- Advice based on signature moves, defensive attributes, and fight IQ
+- Tale of the Tape advantage breakdown
+- Opponent weaknesses and how to exploit them
+- Opponent strengths and how to neutralize them
+- Round-by-round strategy
+- Advice based on both fighters' signature moves, defensive attributes, and fight IQ
+- Adjustments if the opponent starts winning certain exchanges
 
-Use actionable steps.
-Use fight science jargon.
-Use pop culture references from kung fu movies and real iconic boxing moments
+Use very detailed, actionable steps.
+Use a lot of fight science jargon.
+Use varied references from kung fu films and iconic combat sports moments and pop culture references.
+Do not ignore the opponent data.
 `;
+
+    //     const userData = req.body;
+
+    //     if (!userData || Object.keys(userData).length === 0) {
+    //         return res.status(400).json({ error: "No fighter data provided." });
+    //     }
+
+    //     const prompt = `
+    // You are an experienced MMA coach.
+
+    // Generate a detailed MMA gameplan for a fighter with these stats:
+    // ${JSON.stringify(userData, null, 2)}
+
+    // Include:
+    // - Recommended drills
+    // - Counters for opponent weaknesses
+    // - Round-by-round strategy
+    // - Advice based on signature moves, defensive attributes, and fight IQ
+
+    // Use very detailed, actionable steps.
+    // Use a lot of fight science jargon.
+    // Use pop culture references from kung fu movies and real iconic boxing moments and make it vary, not always bruce lee quotes
+
+    // `;
+
+
 
     try {
         const response = await client.chat.completions.create({
