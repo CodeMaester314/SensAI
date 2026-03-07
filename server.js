@@ -78,70 +78,70 @@ Use pop culture references from kung fu movies and real iconic boxing moments
 
         return res.json({
             mode: "demo",
-            gameplan: prompt,
-            //     `
-            // Tale of the Tape:  Advantage Breakdown
-            //     Height: Slight edge. Better leverage in clinch exchanges
-            //     Reach: +2” reach advantage. Critical for jab control
-            //     Stance: Orthodox vs Orthodox. Outside foot battle less critical
-            //     Experience: More championship rounds logged. Cardio proven under lights
-            //     Broadcast Take:
-            //     The reach and championship experience are the quiet advantages here. Over 15 minutes, that matters. If this turns into deep water, the edge leans toward composure.
+            gameplan:
+                `
+            Tale of the Tape:  Advantage Breakdown
+                Height: Slight edge. Better leverage in clinch exchanges
+                Reach: +2” reach advantage. Critical for jab control
+                Stance: Orthodox vs Orthodox. Outside foot battle less critical
+                Experience: More championship rounds logged. Cardio proven under lights
+                Broadcast Take:
+                The reach and championship experience are the quiet advantages here. Over 15 minutes, that matters. If this turns into deep water, the edge leans toward composure.
 
-            // Round 1:  Establish the Narrative
-            // You’re going to see him take the center early.
-            //     • Pump the jab, not just to score, but to blind and gather reads
-            //     • Touch the lead leg with calf kicks to test stance stability
-            //     • Keep guard tight on exits,  no naked retreats
-            //     • Feint the level change early to plant wrestling doubt
-            // This round is about information gathering and tempo control.
+            Round 1:  Establish the Narrative
+            You’re going to see him take the center early.
+                • Pump the jab, not just to score, but to blind and gather reads
+                • Touch the lead leg with calf kicks to test stance stability
+                • Keep guard tight on exits,  no naked retreats
+                • Feint the level change early to plant wrestling doubt
+            This round is about information gathering and tempo control.
 
-            // Keys to Victory
-            //     Own the Center Line. Make the opponent circle, don’t follow. Cut angles.
-            //     Layer the Threats. Strikes into level changes, level changes into clinch pressure.
-            //     Win the Gas Tank Battle. Body work and fence control pay dividends late.
+            Keys to Victory
+                Own the Center Line. Make the opponent circle, don’t follow. Cut angles.
+                Layer the Threats. Strikes into level changes, level changes into clinch pressure.
+                Win the Gas Tank Battle. Body work and fence control pay dividends late.
 
-            // Round 2: Pressure & Tactical Shifts
-            // Expect the pace to increase.
-            //     • Jab-cross → level change entry
-            //     • Drive opponent to the cage, establish head position
-            //     • Mix short elbows in the clinch
-            //     • Chain takedown attempts. Never single-shot
-            // This is where attrition begins.
+            Round 2: Pressure & Tactical Shifts
+            Expect the pace to increase.
+                • Jab-cross → level change entry
+                • Drive opponent to the cage, establish head position
+                • Mix short elbows in the clinch
+                • Chain takedown attempts. Never single-shot
+            This is where attrition begins.
 
-            // Between Rounds – Corner Advice (After Round 2)
-            // “Listen, you’re ahead if you stay disciplined. Don’t chase the finish. The jab is money. When he shells up, go body then head. If you get him to the fence, stay heavy on that underhook. Deep breath. You’re breaking him.”
+            Between Rounds – Corner Advice (After Round 2)
+            “Listen, you’re ahead if you stay disciplined. Don’t chase the finish. The jab is money. When he shells up, go body then head. If you get him to the fence, stay heavy on that underhook. Deep breath. You’re breaking him.”
 
-            // Round 3 – Championship Composure
-            // If ahead:
-            //     • Control position
-            //     • Force desperate shots
-            //     • Counter clean
-            // If behind:
-            //     • Increase output in bursts
-            //     • Target body-head combinations
-            //     • Hunt scrambles aggressively
-            // No wasted motion. Every exchange has intent.
+            Round 3 – Championship Composure
+            If ahead:
+                • Control position
+                • Force desperate shots
+                • Counter clean
+            If behind:
+                • Increase output in bursts
+                • Target body-head combinations
+                • Hunt scrambles aggressively
+            No wasted motion. Every exchange has intent.
 
-            // Live Scorecard Projection
-            //     After Round 1: 10–9 (Control & cleaner jab)
-            //     After Round 2: 20–18 (Fence dominance & takedown threats)
-            //     Entering Round 3: Clear but competitive lead
+            Live Scorecard Projection
+                After Round 1: 10–9 (Control & cleaner jab)
+                After Round 2: 20–18 (Fence dominance & takedown threats)
+                Entering Round 3: Clear but competitive lead
 
-            // Broadcast Note:
-            // Unless something dramatic happens, this is trending toward a unanimous decision. But in MMA, one clean shot changes everything.
-
-
-            // Training Camp Emphasis
-            //     • High-output jab rounds under fatigue
-            //     • Cage-cutting positional drills
-            //     • Strike-to-shot chain reps
-            //     • Situational sparring from compromised positions
+            Broadcast Note:
+            Unless something dramatic happens, this is trending toward a unanimous decision. But in MMA, one clean shot changes everything.
 
 
-            // *** Live AI broadcast-style analysis requires API billing.
-            // This is a demonstration output.
-            // `
+            Training Camp Emphasis
+                • High-output jab rounds under fatigue
+                • Cage-cutting positional drills
+                • Strike-to-shot chain reps
+                • Situational sparring from compromised positions
+
+
+            *** Live AI broadcast-style analysis requires API billing.
+            This is a demonstration output.
+            `
         });
     }
 });
